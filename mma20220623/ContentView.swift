@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var isRight = false
+
     var body: some View {
-        Text("Hello, world!")
+        Text(isRight ? "→" : "←")
             .padding()
+        Button("Invert") {
+            self.isRight = !self.isRight
+        }
     }
 }
 
