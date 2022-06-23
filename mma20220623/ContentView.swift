@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var isRight = false
+    @State private var direction = 0.0
 
     var body: some View {
-        Text(isRight ? "→" : "←")
+        Text((direction >= 0.5) ? "→" : "←")
             .padding()
-        Button("Invert") {
-            self.isRight = !self.isRight
-        }
+        Slider(value: $direction,
+               in: 0...1,
+               onEditingChanged: { _ in
+            })
     }
 }
 
