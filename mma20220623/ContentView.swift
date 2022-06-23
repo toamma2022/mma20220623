@@ -11,7 +11,7 @@ struct ContentView: View {
     @State private var direction = 0.0
 
     var body: some View {
-        Text((direction >= 0.5) ? "→" : "←")
+        Image((direction >= 0.5) ? "rightarrow" : "leftarrow")
             .padding()
         Slider(value: $direction,
                in: 0...1,
