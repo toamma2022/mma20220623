@@ -11,7 +11,7 @@ struct ContentView: View {
     @State private var direction = 0.0
 
     var body: some View {
-        Image((direction >= 0.5) ? "rightarrow" : "leftarrow")
+        Image("leftarrow").rotationEffect(.degrees(Double(self.direction >= 0.5 ? 1 : 0) * 180))
             .padding()
         Slider(value: $direction,
                in: 0...1,
